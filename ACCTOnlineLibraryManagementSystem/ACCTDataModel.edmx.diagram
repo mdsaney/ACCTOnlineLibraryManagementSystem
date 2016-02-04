@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b3456141442a48c1becce7bb902e6fc8" Name="Diagram1">
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.Book" Width="1.5" PointX="0.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.Borrow" Width="1.5" PointX="3.375" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.Faculty" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.FacultyLogin" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.Student" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.StudentLogin" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACCTOnlineLibraryModel.sysdiagram" Width="1.5" PointX="5.625" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="ACCTOnlineLibraryModel.FK_Borrow_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="ACCTOnlineLibraryModel.FK_Borrow_FacultyLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="ACCTOnlineLibraryModel.FK_Borrow_StudentLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="ACCTOnlineLibraryModel.FK_Faculty_FacultyLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="ACCTOnlineLibraryModel.FK_Student_StudentLogin" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

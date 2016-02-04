@@ -1,0 +1,95 @@
+﻿@model ACCTOnlineLibraryManagementSystem.Models.Student
+@{
+    ViewBag.Title = "StudentRegistration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true, "Create User Failed, Check your fields")
+
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="centralize">
+                <img src="~/images/logo.png" width="150px" height="75px" />
+            </div>
+            <div class="container body-login">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h2><strong>Student</strong> Registration Form
+                        </h2>
+                        <div class="description">
+                            <p>
+                                This is a responsive ACCT Online Library Student Registration Form Developed with Bootstrap.
+                                Please provide the required information to create an account.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Create an account with us!!</h3>
+                                <p>Please provide following information to create an account.</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class=" glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="" method="post" class="login-form">
+
+                                <div class="form-group">
+
+                                    @Html.TextBoxFor(u => u.StudentName, new {@name = "form-StudentName", @placeholder = "Student Name", @class = "form-control", @id = "form-StudentName"})
+                                    @Html.ValidationMessageFor(u => u.StudentName)
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(u => u.Department, new {@name = "form-Department", @placeholder = "Department", @class = "form-control", @id = "form-password"})
+                                    @Html.ValidationMessageFor(u => u.Department)
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(u => u.Email, new {@name = "form-email", @placeholder = "Email", @class = "form-email form-control", @id = "form-email"})
+                                    @Html.ValidationMessageFor(u => u.Email)
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(u => u.Contact, new {@name = "form-contact", @placeholder = "Contact Number", @class = " form-control", @id = "form-password"})
+                                    @Html.ValidationMessageFor(u => u.Contact)
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextAreaFor(u => u.Address, new {@name = "form-address", @placeholder = "Address", @class = "form-control", @id = "form-password"})
+                                    @Html.ValidationMessageFor(u => u.Address)
+
+                                </div>
+
+                                <div class="center">
+                                    <button type="submit" class="btn-info btn-lg">Register</button>
+                                    <button type="submit" class="btn-danger btn-lg">Cancel</button>
+
+                                </div>
+                                <div class="clear"></div>
+                                <p>Already Have an Account? @Html.ActionLink(" Login Here..", "StudentRegistration", "Account", new { @class = "changelink" })</p>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+}

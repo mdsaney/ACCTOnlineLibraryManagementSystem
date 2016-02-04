@@ -1,0 +1,86 @@
+﻿
+@using System.Drawing
+@using System.Web.UI.WebControls
+@model ACCTOnlineLibraryManagementSystem.Models.FacultyLoginModel
+
+@{
+    ViewBag.Title = "FacultyLogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container body-login">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h2>ACCT Online Library Login Page</h2>
+                            <div class="description">
+                                <p>Please provide the following information to access ACCT library</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Faculty Login site</h3>
+                                    <p>Enter your User Name and Password to log on:</p>
+                                </div>
+
+
+                                <div class="form-top-right">
+                                    <i class=" glyphicon glyphicon-lock"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="" method="post" class="login-form">
+                                    @Html.ValidationSummary(true, "Login Failed. Check Your Login Credentials.")
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(u => u.FUserName, new { @name = "form-username", @placeholder =" User Name", @class = " form-control", @id = "FUserName" })
+                                        @Html.ValidationMessageFor(u => u.FUserName)
+                                    </div>
+                                    <div class="form-group">
+
+                                        @Html.TextBoxFor(u => u.Password, new { @name = "form-password", @placeholder = "Password", @class = " form-control", @id = "password" })
+                                        @Html.ValidationMessageFor(u => u.Password)
+                                    </div>
+                                    <button type="submit" class="btn-success">Log In</button>
+                                    <button type="submit" class="btn-danger">Cancel</button>
+
+                                    <div class="clear"></div>
+                                    <p>Not Registered? @Html.ActionLink(" Register Here..", "FacultyLogIn","Account", new { @class = "changelink" } )</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <h3>...or login with:</h3>
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-2" href="#">
+                                    <span class="fa fa-facebook"></span> Facebook
+                                </a>
+                                <a class="btn btn-link-2" href="#">
+                                    <span class="fa fa-twitter"></span> Twitter
+                                </a>
+                                <a class="btn btn-link-2" href="#">
+                                    <span class="fa fa-google-plus"></span> Google Plus
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    }
+
+</div>

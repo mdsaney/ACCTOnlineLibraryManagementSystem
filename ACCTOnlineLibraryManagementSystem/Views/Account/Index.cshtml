@@ -1,0 +1,47 @@
+﻿@using System.Web.UI.HtmlControls
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="clear"></div>
+        <div class="centralize">
+            <img src="~/images/logo.png" width="150px" height="75px" />
+        </div>
+
+    <div class="center">
+        <h2>ACCT Online Library Login Page</h2>
+        <p>Please select one option from below to login ACCT library</p>
+    </div>
+    
+    <div class="clear"></div>
+    
+
+    <div class="col-md-12 center ">
+        <div class="col-lg-6 headerDivider">
+            @Html.ActionLink(" ", "FacultyLogIn","Account", new {style = "background: url('"+ Url.Content("~/images/admin.png") + "') no-repeat center; display:block; height:300px; width: 274px; "})
+           
+            <span><h2>Faculty Login </h2></span>
+        </div>
+        <div class="col-lg-6">
+            
+            @Html.ActionLink(" ", "StudentLogIn", "Account", new { style = "background: url('" + Url.Content("~/images/User.png") + "') no-repeat center; display:block; height:300px; width: 274px; " })
+
+            <span><h2>Student Login </h2></span>
+        </div>
+
+
+
+    </div>
+    <div style="border-left: 1px solid #000; height: 100%"></div>
+    <div class="col-md-4">
+
+    </div>
+
+
+</div>
+
