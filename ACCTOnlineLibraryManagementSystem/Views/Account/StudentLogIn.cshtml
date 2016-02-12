@@ -1,4 +1,4 @@
-﻿@model ACCTOnlineLibraryManagementSystem.Models.StudentLogin
+﻿@model ACCTOnlineLibraryManagementSystem.Models.Student
 
 
 @{
@@ -15,7 +15,7 @@
 
             <div class="inner-bg">
                 <div class="centralize">
-                    <img src="~/images/logo.png" width="250px" height="150px" />
+                    <img src="~/images/logo.png" width="250" height="150" />
                 </div>
                 <div class="container body-login">
                     <div class="row">
@@ -43,8 +43,8 @@
                                 <form role="form" action="" method="post" class="login-form">
                                     @Html.ValidationSummary(true, "Login Failed. Check Your Login Credentials.")
                                     <div class="form-group">
-                                        @Html.TextBoxFor(u => u.UserName, new {@name = "form-username", @placeholder = " User Name", @class = "form-control", @id = "FUserName"})
-                                        @Html.ValidationMessageFor(u => u.UserName)
+                                        @Html.TextBoxFor(u => u.Email, new {@name = "form-email", @placeholder = " Email", @class = "form-control", @id = "Email"})
+                                        @Html.ValidationMessageFor(u => u.Email)
                                     </div>
                                     <div class="form-group">
 

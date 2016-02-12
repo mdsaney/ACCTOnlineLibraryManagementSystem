@@ -1,6 +1,6 @@
-﻿@model ACCTOnlineLibraryManagementSystem.Models.Student
+﻿@model ACCTOnlineLibraryManagementSystem.Models.Faculty
 @{
-    ViewBag.Title = "StudentRegistration";
+    ViewBag.Title = "FacultyRegistration";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,7 +20,8 @@
             <div class="container body-login">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
-                        <h2><strong>Student</strong> Registration Form
+                        <h2>
+                            <strong>Student</strong> Registration Form
                         </h2>
                         <div class="description">
                             <p>
@@ -44,26 +45,27 @@
                         <div class="form-bottom">
                             <form role="form" action="" method="post" class="login-form">
 
+
                                 <div class="form-group">
 
-                                    @Html.TextBoxFor(u => u.RegID, new { @name = "form-RegID", @placeholder = "Registration ID Number", @class = "form-control", @id = "form-StudentName" })
-                                    @Html.ValidationMessageFor(u => u.RegID)
-                                </div>
-                                
-                                <div class="form-group">
-
-                                    @Html.TextBoxFor(u => u.StudentName, new {@name = "form-StudentName", @placeholder = "Student Name", @class = "form-control", @id = "form-StudentName"})
-                                    @Html.ValidationMessageFor(u => u.StudentName)
+                                    @Html.TextBoxFor(u => u.Name, new {@name = "form-Name", @placeholder = "Name", @class = "form-control", @id = "form-Name"})
+                                    @Html.ValidationMessageFor(u => u.Name)
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.TextBoxFor(u => u.Department, new {@name = "form-Department", @placeholder = "Department", @class = "form-control", @id = "form-Department" })
+                                    @Html.TextBoxFor(u => u.Designation, new { @name = "form-Designation", @placeholder = "Designation", @class = "form-control", @id = "form-Designation" })
                                     @Html.ValidationMessageFor(u => u.Department)
 
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.TextBoxFor(u => u.Email, new {@name = "form-email", @placeholder = "Email", @class = "form-email form-control", @id = "form-email"})
+                                    @Html.TextBoxFor(u => u.Department, new { @name = "form-Department", @placeholder = "Department", @class = "form-control", @id = "form-Department" })
+                                    @Html.ValidationMessageFor(u => u.Department)
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(u => u.Email, new { @name = "form-email", @placeholder = "Email", @class = "form-email form-control", @id = "form-email" })
                                     @Html.ValidationMessageFor(u => u.Email)
 
                                 </div>
@@ -75,13 +77,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.TextBoxFor(u => u.Contact, new { @name = "form-contact", @placeholder = "Contact", @class = " form-control", @id = "form-contact" })
-                                    @Html.ValidationMessageFor(u => u.Contact)
+                                    @Html.TextBoxFor(u => u.Phone, new { @name = "form-Phone", @placeholder = "Contact", @class = " form-control", @id = "form-Phone" })
+                                    @Html.ValidationMessageFor(u => u.Phone)
 
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.TextAreaFor(u => u.Address, new {@name = "form-address", @placeholder = "Address", @class = "form-control", @id = "form-password"})
+                                    @Html.TextAreaFor(u => u.Address, new { @name = "form-address", @placeholder = "Address", @class = "form-control", @id = "form-password" })
                                     @Html.ValidationMessageFor(u => u.Address)
 
                                 </div>
@@ -92,7 +94,7 @@
 
                                 </div>
                                 <div class="clear"></div>
-                                <p>Already Have an Account? @Html.ActionLink(" Login Here..", "StudentLogin", "Account", new { @class = "changelink" })</p>
+                                <p>Already Have an Account? @Html.ActionLink(" Login Here..", "FacultyLogIn", "Account", new { @class = "changelink" })</p>
 
                             </form>
                         </div>

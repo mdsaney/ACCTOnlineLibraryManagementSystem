@@ -1,7 +1,7 @@
 ﻿
 @using System.Drawing
 @using System.Web.UI.WebControls
-@model ACCTOnlineLibraryManagementSystem.Models.FacultyLoginModel
+@model ACCTOnlineLibraryManagementSystem.Models.Faculty
 
 @{
     ViewBag.Title = "FacultyLogIn";
@@ -43,8 +43,8 @@
                                 <form role="form" action="" method="post" class="login-form">
                                     @Html.ValidationSummary(true, "Login Failed. Check Your Login Credentials.")
                                     <div class="form-group">
-                                        @Html.TextBoxFor(u => u.FUserName, new { @name = "form-username", @placeholder =" User Name", @class = " form-control", @id = "FUserName" })
-                                        @Html.ValidationMessageFor(u => u.FUserName)
+                                        @Html.TextBoxFor(u => u.Email, new { @name = "form-email", @placeholder =" Email", @class = " form-control", @id = "email" })
+                                        @Html.ValidationMessageFor(u => u.Email)
                                     </div>
                                     <div class="form-group">
 

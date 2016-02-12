@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="top-content">
+
+    <div class="inner-bg">
+        <div class="centralize">
+            <img src="~/images/logo.png" width="150" height="75" />
+        </div>
+        <div class="container body-login">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h2>
+                        <strong>Student</strong> Registration Form
+                    </h2>
+                </div>
+            </div>
+
+            
+<!-- Title and search box -->
+<header>
+  <h1 class='title'>Calaca</h1>
+  <div class='search-box-container'>
+    <input type='text' class='search-box' placeholder='Search' autofocus ng-model='query' ng-change='delayedSearch(0)'>
+  </div>
+</header>
+
+<!-- Listing of search results -->
+<main class='results-container' ng-cloak>
+  <section class='results-info'>
+    <p id='response-details'>{{(hits | number) || 0}} {{resultsLabel || 'results'}} ({{(timeTook || 0)}}ms)</p>
+    <p ng-show='paginationEnabled()' id='pagination-details'>Showing {{paginationLowerBound}} - {{paginationUpperBound}}</p>
+  </section>
+  <section class='results'>
+    <p class='no-results' ng-show='!results.length && !loading'>No Results</p>
+    <article class='result' ng-repeat='result in results track by $id(result)'>
+      <h2>{{result.name}}</h2>
+      <p>{{result.description}}</p>
+    </article>
+  </section>
+  <section class='pagination-controls'>
+    <button ng-click='search(-1)' ng-show='paginationEnabled() && offset !== 0' class='pager'>Previous</button><button ng-click='search(1)' ng-show='paginationEnabled()' class='pager'>Next</button>
+  </section>
+</main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Title and search box -->
+<header class='jumbotron'>
+    <h1 class='title'>Calaca</h1>
+    <div class='search-box-container'>
+        <input type='text' class='search-box' placeholder='Search' autofocus ng-model='query' ng-change='delayedSearch(0)'>
+    </div>
+</header>
+
+<!-- Listing of search results -->
+<main class='results-container' ng-cloak>
+    <section class='results-info'>
+        <p id='response-details'>{{(hits | number) || 0}} {{resultsLabel || 'results'}} ({{(timeTook || 0)}}ms)</p>
+        <p ng-show='paginationEnabled()' id='pagination-details'>Showing {{paginationLowerBound}} - {{paginationUpperBound}}</p>
+    </section>
+    <section class='results'>
+        <p class='no-results' ng-show='!results.length && !loading'>No Results</p>
+        <article class='result' ng-repeat='result in results track by $id(result)'>
+            <h2>{{result.name}}</h2>
+            <p>{{result.description}}</p>
+        </article>
+    </section>
+    <section class='pagination-controls'>
+        <button ng-click='search(-1)' ng-show='paginationEnabled() && offset !== 0' class='pager'>Previous</button><button ng-click='search(1)' ng-show='paginationEnabled()' class='pager'>Next</button>
+    </section>
+</main>
+

@@ -14,6 +14,12 @@ namespace ACCTOnlineLibraryManagementSystem
     
     public partial class Faculty
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Faculty()
+        {
+            this.Borrows = new HashSet<Borrow>();
+        }
+    
         public int FacultyID { get; set; }
         public string Name { get; set; }
         public string Designation { get; set; }
@@ -21,9 +27,13 @@ namespace ACCTOnlineLibraryManagementSystem
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public System.DateTime MemberSince { get; set; }
-        public int FacultyLoginID { get; set; }
+        public string FileName { get; set; }
+        public Nullable<int> ImageSize { get; set; }
+        public byte[] ImageData { get; set; }
+        public string Password { get; set; }
+        public Nullable<bool> AdminRole { get; set; }
     
-        public virtual FacultyLogin FacultyLogin { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Borrow> Borrows { get; set; }
     }
 }

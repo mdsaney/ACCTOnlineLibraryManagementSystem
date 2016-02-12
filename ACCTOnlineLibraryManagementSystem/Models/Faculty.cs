@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
 namespace ACCTOnlineLibraryManagementSystem.Models
 {
-    public class Student
+    public class Faculty
     {
         [Required]
         [StringLength(250)]
-        [Remote("doesRegIDExist", "Account", HttpMethod = "POST", ErrorMessage = "Registration ID already exists. Please enter a different Registrtation ID.")]
-        public string RegID { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        [StringLength(250)]
-        public string StudentName { get; set; }
+        [StringLength(50)]
+        public string Designation { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -33,18 +31,19 @@ namespace ACCTOnlineLibraryManagementSystem.Models
         public string Password { get; set; }
 
         [Required]
-        [StringLength(12)]
-        public string Contact { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
 
         [Required]
         [StringLength(250)]
         public string Address { get; set; }
 
-        
+        [Required]
+        [DataType(DataType.DateTime)]
+        public string MemberSince { get; set; }
 
         public int ImageSize { get; set; }
         public string FileName { get; set; }
         public byte[] ImageData { get; set; }
-
     }
 }

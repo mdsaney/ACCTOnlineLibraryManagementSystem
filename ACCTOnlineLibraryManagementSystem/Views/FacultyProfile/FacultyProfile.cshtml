@@ -1,0 +1,82 @@
+﻿@model ACCTOnlineLibraryManagementSystem.Models.Faculty
+
+@{
+    ViewBag.Title = "FacultyProfile";
+    Layout = "~/Views/Shared/_ProfileLayout .cshtml";
+}
+
+<div class="container">
+
+    <div class="centralize">
+        <img src="~/images/logo.png" width="250" height="150" />
+    </div>
+    <br />
+    <h1>Welcome @Session["Name"].ToString() !</h1>
+    <hr>
+
+
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-4">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Upload a different photo...</h6>
+
+                <input type="file" class="form-control">
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-8 personal-info">
+
+            <h3>Personal info</h3>
+
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group span12">
+                    <label class="col-lg-3 control-label">Name:</label>
+                    <div class="col-lg-8 control-label">
+                        @Session["Name"].ToString()
+                    </div>
+                </div>
+
+                <div class="form-group span12">
+                    <label class="col-lg-3 control-label">Designation:</label>
+                    <div class="col-lg-8 control-label">
+                        @Session["Designation"].ToString()
+                    </div>
+                </div>
+                <div class="form-group span12">
+                    <label class="col-lg-3 control-label">Department:</label>
+                    <div class="col-lg-8 control-label">
+                        @Session["Department"].ToString()
+                    </div>
+                </div>
+                <div class="form-group span12">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8 control-label">
+                        @Session["Email"].ToString()
+                    </div>
+                </div>
+                <div class="form-group span12">
+                    <label class="col-lg-3 control-label">Contact:</label>
+                    <div class="col-lg-8 control-label">
+                        @Session["Phone"].ToString()
+                    </div>
+                </div>
+
+                <div class="form-group span12">
+                    <label class="col-lg-3 control-label">Address:</label>
+                    <div class="col-lg-8 control-label">
+                        @Session["Address"].ToString()
+                    </div>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+</div>

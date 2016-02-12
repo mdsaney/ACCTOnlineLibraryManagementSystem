@@ -14,15 +14,23 @@ namespace ACCTOnlineLibraryManagementSystem
     
     public partial class Borrow
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Borrow()
+        {
+            this.BorrowStatus = new HashSet<BorrowStatu>();
+        }
+    
         public int BorrowID { get; set; }
-        public Nullable<int> StudentLoginID { get; set; }
-        public Nullable<int> FacultyLoginID { get; set; }
         public Nullable<int> BookID { get; set; }
         public Nullable<System.DateTime> IssueDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
+        public Nullable<int> StudentID { get; set; }
+        public Nullable<int> FacultyID { get; set; }
     
         public virtual Book Book { get; set; }
-        public virtual FacultyLogin FacultyLogin { get; set; }
-        public virtual StudentLogin StudentLogin { get; set; }
+        public virtual Faculty Faculty { get; set; }
+        public virtual Student Student { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BorrowStatu> BorrowStatus { get; set; }
     }
 }

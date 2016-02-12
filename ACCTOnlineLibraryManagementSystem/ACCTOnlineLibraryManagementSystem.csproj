@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -127,59 +127,77 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACCTOnlineLibraryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACCTOnlineLibraryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACCTOnlineLibraryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACCTOnlineLibraryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACCTOnlineLibraryModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Book.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Borrow.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowStatu.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FacultyProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\StudentProfileController.cs" />
+    <Compile Include="Faculty.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ACCTDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ACCTDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ACCTDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ACCTDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ACCTDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Book.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Borrow.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Faculty.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FacultyLogin.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FacultyLoginModel.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentLogin.cs" />
-    <Compile Include="Student.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="StudentLogin.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>ACCTDataModel.tt</DependentUpon>
+      <DependentUpon>ACCTOnlineLibraryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ACCTOnlineLibraryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ACCTOnlineLibraryModel.edmx</DependentUpon>
+      <LastGenOutput>ACCTOnlineLibraryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ACCTOnlineLibraryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ACCTOnlineLibraryModel.edmx</DependentUpon>
+      <LastGenOutput>ACCTOnlineLibraryModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\calaca.css" />
     <Content Include="Content\form-elements.css" />
+    <Content Include="Content\reset.css" />
     <Content Include="favicon.ico" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
@@ -187,16 +205,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ACCTDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ACCTDataModel.edmx</DependentUpon>
-      <LastGenOutput>ACCTDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ACCTDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ACCTDataModel.edmx</DependentUpon>
-      <LastGenOutput>ACCTDataModel.cs</LastGenOutput>
-    </Content>
     <Content Include="images\1.jpg" />
     <Content Include="images\9.jpg" />
     <Content Include="images\admin.png" />
@@ -205,15 +213,9 @@
     <Content Include="images\library-11.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\User.png" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="ACCTDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ACCTDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ACCTDataModel.edmx.diagram">
-      <DependentUpon>ACCTDataModel.edmx</DependentUpon>
-    </Content>
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
@@ -245,7 +247,16 @@
     <Content Include="font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <EntityDeploy Include="ACCTOnlineLibraryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ACCTOnlineLibraryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ACCTOnlineLibraryModel.edmx.diagram">
+      <DependentUpon>ACCTOnlineLibraryModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\config.js" />
+    <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
@@ -264,6 +275,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\services.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -284,10 +296,17 @@
     <Content Include="Views\Account\StudentLogIn.cshtml" />
     <Content Include="Views\Account\StudentRegistration.cshtml" />
     <Content Include="Views\Account\Registration.cshtml" />
+    <Content Include="Views\Shared\_ProfileLayout .cshtml" />
+    <Content Include="Views\Account\Success.cshtml" />
+    <Content Include="Views\Account\LoginSuccess.cshtml" />
+    <Content Include="Views\StudentProfile\Index.cshtml" />
+    <Content Include="Views\StudentProfile\StudentProfile.cshtml" />
+    <Content Include="Views\Account\FacultyRegistration.cshtml" />
+    <Content Include="Views\FacultyProfile\FacultyProfile.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

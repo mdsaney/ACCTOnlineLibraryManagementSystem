@@ -27,6 +27,9 @@ namespace ACCTOnlineLibraryManagementSystem
         public string Description { get; set; }
         public System.DateTime EntryAt { get; set; }
         public string ISBN { get; set; }
+        public string FileName { get; set; }
+        public Nullable<int> ImageSize { get; set; }
+        public byte[] ImageData { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Borrow> Borrows { get; set; }
